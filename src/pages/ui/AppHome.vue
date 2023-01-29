@@ -8,6 +8,7 @@ import Vue from 'vue';
 import AppTaskList from '@/entities/ui/AppTaskList.vue';
 
 export default Vue.extend({
+  name: 'AppHome',
   components: {
     AppTaskList,
   }

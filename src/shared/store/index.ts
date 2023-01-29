@@ -1,10 +1,15 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex, { StoreOptions } from 'vuex';
+import { tasks } from './modules/tasks';
+import { IRootStore } from '@/interfaces/IRootStore';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store: StoreOptions<IRootStore> = {
   state: {
+    day: {
+      tasks: [],
+    },
   },
   getters: {
   },
@@ -13,5 +18,7 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
+    tasks,
   }
-})
+}
+export default new Vuex.Store<IRootStore>(store);
